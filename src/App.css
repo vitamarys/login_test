@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+
+  }
+  @font-face {
+    font-family: 'Basis Grotesque Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(../public/fonts/BasisGrotesquePro-Regular.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Basis Grotesque Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../public/fonts/BasisGrotesquePro-Medium.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Basis Grotesque Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../public/fonts/BasisGrotesquePro-Black.ttf) format('truetype');
+  }
+  html {
+    font-family: "Basis Grotesque Pro", sans-serif;
+  }
+
+  
+};
+
+@layer utilities {
+  .blue-btn{
+    @apply rounded-lg py-3 bg-blue-light text-base text-center font-medium text-white w-full cursor-pointer duration-300 hover:opacity-75 disabled:opacity-75
+  }
+  .input{
+    @apply h-12 w-full px-3 text-sm border border-gray-300 rounded-md
+  }
+}
+
+.custom-before::after{
+content: '';
+display: block;
+width: calc(50% - 14px);
+height: 1px;
+background-color: #E3E6E9;
+position: absolute;
+right: 0;
+top: 50%;
+transform: translateY(-50%);
+}
+.custom-before::before{
+  content: '';
+  display: block;
+  width: calc(50% - 14px);
+  height: 1px;
+  background-color: #E3E6E9;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  }
