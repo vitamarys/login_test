@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 
 import logo from "../../assets/logo.svg";
-import { useForgotStore, useLoginStore } from "../../store/store";
+import { useForgotStore } from "../../store/store";
 import { Link } from "react-router-dom";
 
 
@@ -31,7 +31,7 @@ function ForgotPassword() {
   });
 
   
-  const { isLoading, resetPassword, error, errorData, successMsg, success } = useForgotStore();
+  const { resetPassword, error, errorData, successMsg, success } = useForgotStore();
 
   const onSubmit = handleSubmit(async(data)=>{
     const { email } = data;

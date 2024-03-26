@@ -20,7 +20,7 @@ function App() {
     }
   },[])
   return (
-    <div className='pt-10'>
+    <div className='pt-10 max-[676px]:px-3'>
       <Routes>
 
       <Route element={<PrivateRoutes isAuthenticated={!isToken ? true : false } redirectPath={'/dashboard'}/>}>

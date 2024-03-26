@@ -1,7 +1,7 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useLoginStore, useResetPassStore } from "../../store/store";
+import {  useResetPassStore } from "../../store/store";
 
 import logo from "../../assets/logo.svg";
 import { LuEye } from "react-icons/lu";
