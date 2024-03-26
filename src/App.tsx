@@ -1,5 +1,5 @@
 
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 import { LoginForm } from './components/LoginForm/LoginForm';
 import { PrivateRoutes } from './components/route/PrivateRoure';
@@ -12,22 +12,21 @@ import { useLoginStore } from './store/store';
 function App() {
   const token = localStorage.getItem('token');
   const {setIsToken,isToken } = useLoginStore();
-  const navigate = useNavigate()
   useEffect(()=>{
-    navigate('/login')
+   
     if(token){
       setIsToken(true);
+      
     }
   },[])
   return (
     <div className='pt-10 max-[676px]:px-3'>
       <Routes>
-
+      <Route path="/" element={<Navigate replace to="/login" />} />
       <Route element={<PrivateRoutes isAuthenticated={!isToken ? true : false } redirectPath={'/dashboard'}/>}>
       <Route path='/login' element={ <LoginForm/>}/>
       <Route path='/forgot-password' element={ <ForgotPassword/>}/>
       <Route path='/password-reset' element={ <ResetPassword/>}/>
-
       </Route>
       <Route element={<PrivateRoutes isAuthenticated={isToken ? true : false } redirectPath={'/login'}/>}>
       <Route path='/dashboard' element={ <FakeDashboard/>}/>
